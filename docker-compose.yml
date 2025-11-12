@@ -1,6 +1,7 @@
 services:
   vllm:
-    image: vllm/vllm-openai:latest
+    container_name: vllm-paddle-vl
+    image: vllm/vllm-openai:nightly
     ports:
       - "8000:8000"
     volumes:
@@ -13,7 +14,6 @@ services:
       "--max-num-batched-tokens","${VLLM_MAX_BATCHED_TOKENS}",
       "--trust-remote-code",
       "--enable-prefix-caching",
-      "--log-level debug",
     ]
     deploy:
       resources:
