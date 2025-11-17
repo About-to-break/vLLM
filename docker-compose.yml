@@ -19,6 +19,8 @@ services:
       "--trust-remote-code",
       "--enable-prefix-caching",
       "--log-level debug",
+      "--limit-mm-per-prompt.video", "0",
+
     ]
     deploy:
       resources:
